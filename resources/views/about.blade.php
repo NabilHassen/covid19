@@ -18,10 +18,10 @@
                                 The website is developed by <strong> Nabil Hassen.</strong>
                             </div>
                             <div class="is-size-5">
-                                A Fullstack Software Developer based in Addis Ababa, Ethiopia.
+                                A <strong> fullstack software developer </strong> based in Addis Ababa, Ethiopia.
                             </div>
                             <div class="is-size-5">
-                                Email me anything at <strong> hello@nabildev.com.</strong>
+                                Email me anything at <strong> nabil.hassen08@gmail.com.</strong>
                             </div>
                             <br>
                             <div class="is-size-5">

@@ -30,13 +30,13 @@
                     Dev
                 </span>
               </a>
-              <a role="button" class="navbar-burger burger has-text-white has-text-weight-bold" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <a role="button" id="burgerBtn" class="navbar-burger burger has-text-white has-text-weight-bold" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="toggleMenu()">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
               </a>
             </div>
-            <div id="navbarBasicExample" class="navbar-menu">
+            <div id="menuBurger" class="navbar-menu">
               <div class="navbar-start">
                 <a class="navbar-item has-text-white" href="/">
                   Coronavirus
@@ -64,6 +64,17 @@
           Copyright © 2020 NabDev. All rights reserved.
         </div>
     </footer>
+
+<script src="/js/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161177413-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161177413-1');
+</script>
 </body>
 </html>
