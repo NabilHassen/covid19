@@ -12,4 +12,5 @@
  */
 
 $router->get('/', "MainController@show");
+$router->get('/live-coronavirus', "MainController@show");
 $router->get('/about', "MainController@showAbout");
