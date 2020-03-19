@@ -51,15 +51,21 @@
                   </div>
                   <div class="columns is-marginless">
                     <div class="column is-3 has-text-white">
-                      Recovery Rate
+                      Active Cases
                       <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($recoveryRate) }}%
+                        {{ number_format($activeCases) }}%
                       </div>
                     </div>
                     <div class="column is-3 has-text-white">
-                      Death Rate
+                      Death Cases
                       <div class="has-text-weight-bold is-size-3">
                         {{ number_format($deathRate) }}%
+                      </div>
+                    </div>
+                    <div class="column is-3 has-text-white">
+                      Recovered Cases
+                      <div class="has-text-weight-bold is-size-3">
+                        {{ number_format($recoveryRate) }}%
                       </div>
                     </div>
                   </div>
@@ -78,36 +84,47 @@
               </div>
               <hr>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-check"></i>
                 </span>
                 <span>
                   Confirmed Cases
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($ethStat->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-exclamation"></i>
                 </span>
                 <span>
                   New Cases
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($ethStat->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-skull-crossbones"></i>
                 </span>
                 <span>
                   Total Death
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($ethStat->deaths) }}
+                </div>
+              </div>
+              <div class="is-size-5">
+                <span class="icon is-medium">
+                  <i class="fas fa-heart"></i>
+                </span>
+                <span>
+                  Total Recovered
+                </span>
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
+                  {{ number_format($ethStat->recovered) }}
                 </div>
               </div>
             </div>
@@ -119,36 +136,47 @@
               </div>
               <hr>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-check"></i>
                 </span>
                 <span>
                   Confirmed Cases
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($usaStat->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-exclamation"></i>
                 </span>
                 <span>
                   New Cases
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($usaStat->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-skull-crossbones"></i>
                 </span>
                 <span>
                   Total Death
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($usaStat->deaths) }}
+                </div>
+              </div>
+              <div class="is-size-5">
+                <span class="icon is-medium">
+                  <i class="fas fa-heart"></i>
+                </span>
+                <span>
+                  Total Recovered
+                </span>
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
+                  {{ number_format($usaStat->recovered) }}
                 </div>
               </div>
             </div>
@@ -160,36 +188,47 @@
               </div>
               <hr>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-check"></i>
                 </span>
                 <span>
                   Confirmed Cases
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($ksaStat->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-exclamation"></i>
                 </span>
                 <span>
                   New Cases
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($ksaStat->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-skull-crossbones"></i>
                 </span>
                 <span>
                   Total Death
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($ksaStat->deaths) }}
+                </div>
+              </div>
+              <div class="is-size-5">
+                <span class="icon is-medium">
+                  <i class="fas fa-heart"></i>
+                </span>
+                <span>
+                  Total Recovered
+                </span>
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
+                  {{ number_format($ksaStat->recovered) }}
                 </div>
               </div>
             </div>
@@ -201,36 +240,47 @@
               </div>
               <hr>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-check"></i>
                 </span>
                 <span>
                   Confirmed Cases
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($chnStat->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-exclamation"></i>
                 </span>
                 <span>
                   New Cases
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($chnStat->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
-                <span class="icon">
+                <span class="icon is-medium">
                   <i class="fas fa-skull-crossbones"></i>
                 </span>
                 <span>
                   Total Death
                 </span>
-                <div class="has-text-weight-medium is-size-3">
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($chnStat->deaths) }}
+                </div>
+              </div>
+              <div class="is-size-5">
+                <span class="icon is-medium">
+                  <i class="fas fa-heart"></i>
+                </span>
+                <span>
+                  Total Recovered
+                </span>
+                <div class="has-text-weight-medium is-size-3 has-text-centered">
+                  {{ number_format($chnStat->recovered) }}
                 </div>
               </div>
             </div>

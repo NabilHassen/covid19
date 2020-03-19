@@ -26,6 +26,8 @@ class MainController extends Controller
 
         $countryStats = $this->statsByCountry();
 
+        $activeCases = (($overallStats->cases - $overallStats->deaths - $overallStats->recovered)/$overallStats->cases)*100;
+
         $ethStat = $this->ethStat();
 
         $usaStat = $this->usaStat();
@@ -34,7 +36,7 @@ class MainController extends Controller
 
         $ksaStat = $this->ksaStat();
 
-        return view('covid', compact('overallStats', 'recoveryRate', 'deathRate', 'countryStats', 'ethStat', 'usaStat', 'chnStat', 'ksaStat'));
+        return view('covid', compact('overallStats', 'recoveryRate', 'deathRate', 'activeCases', 'countryStats', 'ethStat', 'usaStat', 'chnStat', 'ksaStat'));
     }
 
     public function overallStats()

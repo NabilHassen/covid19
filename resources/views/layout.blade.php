@@ -52,16 +52,20 @@
     @yield('main')
 
     <footer class="footer has-background-grey-dark">
-        <div class="container has-text-centered has-text-white">
-          <a href="/live-coronavirus" class="has-text-white">
+        <div class="container has-text-centered">
+          <a href="/live-coronavirus" class="has-text-grey-light">
             Coronavirus
           </a>
-          |
-          <a href="/about" class="has-text-white">
+          <span class="has-text-white">
+            |
+          </span>
+          <a href="/about" class="has-text-grey-light">
             About
           </a>
           <br>
-          Copyright © 2020 NabDev. All rights reserved.
+          <span class="has-text-grey">
+            Copyright © 2020 NabDev. All rights reserved.
+          </span>
         </div>
     </footer>
 
