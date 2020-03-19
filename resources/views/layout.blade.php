@@ -66,6 +66,14 @@
           <span class="has-text-grey">
             Copyright © 2020 NabDev. All rights reserved.
           </span>
+          <br><br>
+          <span class="has-text-grey-lighter is-italic">
+            Powered by
+          </span>
+          <a href="https://onrica.com" target="_blank">
+            <br>
+            <img src="/img/sponsor.png" width="150px" height="70px">
+          </a>
         </div>
     </footer>
 
