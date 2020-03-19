@@ -38,7 +38,7 @@
             </div>
             <div id="menuBurger" class="navbar-menu">
               <div class="navbar-start">
-                <a class="navbar-item has-text-white" href="/">
+                <a class="navbar-item has-text-white" href="/live-coronavirus">
                   Coronavirus
                 </a>
                 <a class="navbar-item has-text-white" href="/about">
@@ -53,7 +53,7 @@
 
     <footer class="footer has-background-grey-dark">
         <div class="container has-text-centered has-text-white">
-          <a href="/" class="has-text-white">
+          <a href="/live-coronavirus" class="has-text-white">
             Coronavirus
           </a>
           |
@@ -68,13 +68,13 @@
 <script src="/js/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161177413-1"></script>
+{{-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161177413-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-161177413-1');
-</script>
+</script> --}}
 </body>
 </html>
