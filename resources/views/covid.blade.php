@@ -289,6 +289,16 @@
 
         <br>
 
+        <div class="container has-text-centered">
+          <span class="has-text-weight-normal has-text-grey is-italic">
+            Powered by 
+          </span>
+          <br>
+          <a href="https://onrica.com" target="_blank">
+            <img src="/img/wide_logo.png" width="130px" height="70px">
+          </a>
+        </div>
+        
         <div class="columns is-marginless">
           <div class="column" style="height:400px;overflow:auto;">
             <table class="table is-fullwidth is-bordered is-hoverable has-background-white-bis">
