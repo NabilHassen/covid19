@@ -302,14 +302,14 @@
         <div class="columns is-marginless">
           <div class="column" style="height:400px;overflow:auto;">
             <table class="table is-fullwidth is-bordered is-hoverable has-background-white-bis">
-              <thead>
+              <thead class="has-background-grey-lighter">
                 <th>Country</th>
                 <th>Cases</th>
                 <th class="has-text-danger">New Cases</th>
                 <th>Death</th>
                 <th class="has-text-danger">New Death</th>
-                <th>Recovered</th>
-                <th class="has-text-warning">Critical</th>
+                <th class="has-text-link">Recovered</th>
+                <th class="has-text-danger">Critical</th>
               </thead>
               <tbody>
                 @foreach ($countryStats as $country)
@@ -319,8 +319,8 @@
                       <td class="has-text-danger"> {{ number_format($country->todayCases) }} </td>
                       <td> {{ number_format($country->deaths) }} </td>
                       <td class="has-text-danger"> {{ number_format($country->todayDeaths) }} </td>
-                      <td> {{ number_format($country->recovered) }} </td>
-                      <td class="has-text-warning"> {{ number_format($country->critical) }} </td>
+                      <td class="has-text-link"> {{ number_format($country->recovered) }} </td>
+                      <td class="has-text-danger"> {{ number_format($country->critical) }} </td>
                     </tr>
                 @endforeach
               </tbody>
