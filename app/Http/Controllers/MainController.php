@@ -32,11 +32,11 @@ class MainController extends Controller
 
         $usaStat = $this->usaStat();
 
-        $chnStat = $this->chnStat();
+        $gerStat = $this->gerStat();
 
         $ksaStat = $this->ksaStat();
 
-        return view('covid', compact('overallStats', 'recoveryRate', 'deathRate', 'activeCases', 'countryStats', 'ethStat', 'usaStat', 'chnStat', 'ksaStat'));
+        return view('covid', compact('overallStats', 'recoveryRate', 'deathRate', 'activeCases', 'countryStats', 'ethStat', 'usaStat', 'gerStat', 'ksaStat'));
     }
 
     public function overallStats()
@@ -74,9 +74,9 @@ class MainController extends Controller
         return json_decode($response);
     }
 
-    public function chnStat()
+    public function gerStat()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries/china");
+        $response = Http::get("https://corona.lmao.ninja/countries/germany");
 
         return json_decode($response);
     }

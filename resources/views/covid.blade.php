@@ -79,9 +79,9 @@
         <div class="columns is-marginless">
           <div class="column is-3">
             <div class="box has-background-success has-text-white">
-              <div class="has-text-white has-text-weight-bold is-size-4">
-                Ethiopian Stats
-              </div>
+              <a name="ethiopia" class="has-text-white has-text-weight-bold is-size-4">
+                Ethiopia Stats
+              </a>
               <hr>
               <div class="is-size-5">
                 <span class="icon is-medium">
@@ -131,9 +131,9 @@
           </div>
           <div class="column is-3">
             <div class="box has-background-grey has-text-white">
-              <div class="has-text-white has-text-weight-bold is-size-4">
+              <a name="usa" class="has-text-white has-text-weight-bold is-size-4">
                 USA Stats
-              </div>
+              </a>
               <hr>
               <div class="is-size-5">
                 <span class="icon is-medium">
@@ -183,9 +183,9 @@
           </div>
           <div class="column is-3">
             <div class="box has-background-primary has-text-white">
-              <div class="has-text-white has-text-weight-bold is-size-4">
+              <a name="saudi-arabia" class="has-text-white has-text-weight-bold is-size-4">
                 Saudi Arabia Stats
-              </div>
+              </a>
               <hr>
               <div class="is-size-5">
                 <span class="icon is-medium">
@@ -235,9 +235,9 @@
           </div>
           <div class="column is-3">
             <div class="box has-background-danger has-text-white">
-              <div class="has-text-white has-text-weight-bold is-size-4">
-                China Stats
-              </div>
+              <a name="germany" class="has-text-white has-text-weight-bold is-size-4">
+                Germany Stats
+              </a>
               <hr>
               <div class="is-size-5">
                 <span class="icon is-medium">
@@ -247,7 +247,7 @@
                   Confirmed Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($chnStat->cases) }}
+                  {{ number_format($gerStat->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -258,7 +258,7 @@
                   New Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($chnStat->todayCases) }}
+                  {{ number_format($gerStat->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -269,7 +269,7 @@
                   Total Death
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($chnStat->deaths) }}
+                  {{ number_format($gerStat->deaths) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -280,7 +280,7 @@
                   Total Recovered
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($chnStat->recovered) }}
+                  {{ number_format($gerStat->recovered) }}
                 </div>
               </div>
             </div>
