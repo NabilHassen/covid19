@@ -1,7 +1,7 @@
 @extends('layout')
 
   @section('title')
-    Live Coronavirus Updates - NabilDev
+    USA Stats COVID-19 Updates - NabilDev
   @endsection
 
   @section('main')
@@ -9,7 +9,7 @@
         <div class="section has-background-info has-background-dark">
             <div class="container">
                 <h1 class="title has-text-white">
-                  Coronavirus Updates
+                  USA States Updates
                   <span class="help is-italic has-text-weight-light">
                     Updated few seconds ago
                   </span>
@@ -23,7 +23,7 @@
                       Total Cases
                     </span>
                     <div class="has-text-weight-bold is-size-3">
-                      {{ number_format($overallStats->cases) }}
+                      {{ number_format($usaStats->cases) }}
                     </div>
                   </div>
                   <div class="column is-3 has-text-white">
@@ -34,7 +34,7 @@
                       Total Death
                     </span>
                     <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($overallStats->deaths) }}
+                        {{ number_format($usaStats->deaths) }}
                       </div>
                     </div>
                     <div class="column is-3 has-text-white">
@@ -45,7 +45,7 @@
                         Total Recovered
                       </span>
                       <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($overallStats->recovered) }}
+                        {{ number_format($usaStats->recovered) }}
                       </div>
                     </div>
                   </div>
@@ -79,8 +79,8 @@
         <div class="columns is-marginless">
           <div class="column is-3">
             <div class="box has-background-success has-text-white">
-              <a name="ethiopia" class="has-text-white has-text-weight-bold is-size-4">
-                Ethiopia Stats
+              <a class="has-text-white has-text-weight-bold is-size-4">
+                {{ $stateStats[0]->state }} Stats
               </a>
               <hr>
               <div class="is-size-5">
@@ -91,7 +91,7 @@
                   Confirmed Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($ethStat->cases) }}
+                  {{ number_format($stateStats[0]->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -102,7 +102,7 @@
                   New Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($ethStat->todayCases) }}
+                  {{ number_format($stateStats[0]->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -113,7 +113,7 @@
                   Total Death
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($ethStat->deaths) }}
+                  {{ number_format($stateStats[0]->deaths) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -124,15 +124,15 @@
                   Total Recovered
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($ethStat->recovered) }}
+                  {{ number_format($stateStats[0]->recovered) }}
                 </div>
               </div>
             </div>
           </div>
           <div class="column is-3">
             <div class="box has-background-grey has-text-white">
-              <a name="usa" class="has-text-white has-text-weight-bold is-size-4">
-                Italy Stats
+              <a class="has-text-white has-text-weight-bold is-size-4">
+                {{ $stateStats[1]->state }} Stats
               </a>
               <hr>
               <div class="is-size-5">
@@ -143,7 +143,7 @@
                   Confirmed Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($itlStat->cases) }}
+                  {{ number_format($stateStats[1]->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -154,7 +154,7 @@
                   New Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($itlStat->todayCases) }}
+                  {{ number_format($stateStats[1]->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -165,7 +165,7 @@
                   Total Death
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($itlStat->deaths) }}
+                  {{ number_format($stateStats[1]->deaths) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -176,15 +176,15 @@
                   Total Recovered
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($itlStat->recovered) }}
+                  {{ number_format($stateStats[1]->recovered) }}
                 </div>
               </div>
             </div>
           </div>
           <div class="column is-3">
             <div class="box has-background-primary has-text-white">
-              <a name="saudi-arabia" class="has-text-white has-text-weight-bold is-size-4">
-                Saudi Arabia Stats
+              <a class="has-text-white has-text-weight-bold is-size-4">
+                {{ $stateStats[2]->state }} Stats
               </a>
               <hr>
               <div class="is-size-5">
@@ -195,7 +195,7 @@
                   Confirmed Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($ksaStat->cases) }}
+                  {{ number_format($stateStats[2]->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -206,7 +206,7 @@
                   New Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($ksaStat->todayCases) }}
+                  {{ number_format($stateStats[2]->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -217,7 +217,7 @@
                   Total Death
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($ksaStat->deaths) }}
+                  {{ number_format($stateStats[2]->deaths) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -228,15 +228,15 @@
                   Total Recovered
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($ksaStat->recovered) }}
+                  {{ number_format($stateStats[2]->recovered) }}
                 </div>
               </div>
             </div>
           </div>
           <div class="column is-3">
             <div class="box has-background-danger has-text-white">
-              <a name="germany" class="has-text-white has-text-weight-bold is-size-4">
-                Germany Stats
+              <a class="has-text-white has-text-weight-bold is-size-4">
+                {{ $stateStats[3]->state }} Stats
               </a>
               <hr>
               <div class="is-size-5">
@@ -247,7 +247,7 @@
                   Confirmed Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($gerStat->cases) }}
+                  {{ number_format($stateStats[3]->cases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -258,7 +258,7 @@
                   New Cases
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($gerStat->todayCases) }}
+                  {{ number_format($stateStats[3]->todayCases) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -269,7 +269,7 @@
                   Total Death
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($gerStat->deaths) }}
+                  {{ number_format($stateStats[3]->deaths) }}
                 </div>
               </div>
               <div class="is-size-5">
@@ -280,7 +280,7 @@
                   Total Recovered
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($gerStat->recovered) }}
+                  {{ number_format($stateStats[3]->recovered) }}
                 </div>
               </div>
             </div>
@@ -303,24 +303,24 @@
           <div class="column" style="height:400px;overflow:auto;">
             <table class="table is-fullwidth is-bordered is-hoverable has-background-white-bis">
               <thead class="has-background-grey-lighter">
-                <th>Country</th>
+                <th>States</th>
                 <th>Cases</th>
                 <th class="has-text-danger">New Cases</th>
                 <th>Death</th>
                 <th class="has-text-danger">New Death</th>
                 <th class="has-text-link">Recovered</th>
-                <th class="has-text-danger">Critical</th>
+                <th class="has-text-danger">Active</th>
               </thead>
               <tbody>
-                @foreach ($countryStats as $country)
+                @foreach ($stateStats as $state)
                     <tr>
-                      <td> {{ $country->country }} </td>
-                      <td> {{ number_format($country->cases) }} </td>
-                      <td class="has-text-danger"> {{ number_format($country->todayCases) }} </td>
-                      <td> {{ number_format($country->deaths) }} </td>
-                      <td class="has-text-danger"> {{ number_format($country->todayDeaths) }} </td>
-                      <td class="has-text-link"> {{ number_format($country->recovered) }} </td>
-                      <td class="has-text-danger"> {{ number_format($country->critical) }} </td>
+                      <td> {{ $state->state }} </td>
+                      <td> {{ number_format($state->cases) }} </td>
+                      <td class="has-text-danger"> {{ number_format($state->todayCases) }} </td>
+                      <td> {{ number_format($state->deaths) }} </td>
+                      <td class="has-text-danger"> {{ number_format($state->todayDeaths) }} </td>
+                      <td class="has-text-link"> {{ number_format($state->recovered) }} </td>
+                      <td class="has-text-danger"> {{ number_format($state->active) }} </td>
                     </tr>
                 @endforeach
               </tbody>

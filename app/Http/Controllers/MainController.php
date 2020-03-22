@@ -11,10 +11,6 @@ class MainController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
 
     public function show()
     {
@@ -30,13 +26,13 @@ class MainController extends Controller
 
         $ethStat = $this->ethStat();
 
-        $usaStat = $this->usaStat();
+        $itlStat = $this->itlStat();
 
         $gerStat = $this->gerStat();
 
         $ksaStat = $this->ksaStat();
 
-        return view('covid', compact('overallStats', 'recoveryRate', 'deathRate', 'activeCases', 'countryStats', 'ethStat', 'usaStat', 'gerStat', 'ksaStat'));
+        return view('covid', compact('overallStats', 'recoveryRate', 'deathRate', 'activeCases', 'countryStats', 'ethStat', 'itlStat', 'gerStat', 'ksaStat'));
     }
 
     public function overallStats()
@@ -60,9 +56,9 @@ class MainController extends Controller
         return json_decode($response);
     }
 
-    public function usaStat()
+    public function itlStat()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries/usa");
+        $response = Http::get("https://corona.lmao.ninja/countries/italy");
 
         return json_decode($response);
     }
@@ -79,6 +75,21 @@ class MainController extends Controller
         $response = Http::get("https://corona.lmao.ninja/countries/germany");
 
         return json_decode($response);
+    }
+
+    public function getUsaStateStats()
+    {
+        $stateStats = json_decode(Http::get("https://corona.lmao.ninja/states"));
+
+        $usaStats = json_decode(Http::get('https://corona.lmao.ninja/countries/usa'));
+
+        $recoveryRate = ($usaStats->recovered/$usaStats->cases)*100;
+
+        $deathRate = ($usaStats->deaths/$usaStats->cases)*100;
+
+        $activeCases = (($usaStats->cases - $usaStats->deaths - $usaStats->recovered)/$usaStats->cases)*100;
+
+        return view('usa-state', compact('stateStats', 'usaStats', 'recoveryRate', 'deathRate', 'activeCases'));
     }
 
     public function showAbout()

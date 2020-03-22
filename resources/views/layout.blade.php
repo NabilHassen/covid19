@@ -39,7 +39,10 @@
             <div id="menuBurger" class="navbar-menu">
               <div class="navbar-start">
                 <a class="navbar-item has-text-white" href="/live-coronavirus">
-                  Coronavirus
+                  Global Coronavirus Updates
+                </a>
+                <a class="navbar-item has-text-white" href="/usa-states-coronavirus-update">
+                  USA States COVID-19 Updates
                 </a>
                 <a class="navbar-item has-text-white" href="/about">
                   About
@@ -54,11 +57,19 @@
     <footer class="footer has-background-grey-dark">
         <div class="container has-text-centered">
           <a href="/live-coronavirus" class="has-text-grey-light">
-            Coronavirus
+            Global Coronavirus Updates
           </a>
-          <span class="has-text-white">
+          <span class="has-text-white is-hidden-mobile">
             |
           </span>
+          <br class="is-hidden-tablet">
+          <a href="/usa-states-coronavirus-update" class="has-text-grey-light">
+            USA States COVID-19 Updates
+          </a>
+          <span class="has-text-white is-hidden-mobile">
+            |
+          </span>
+          <br class="is-hidden-tablet">
           <a href="/about" class="has-text-grey-light">
             About
           </a>
