@@ -314,7 +314,14 @@
               <tbody>
                 @foreach ($countryStats as $country)
                     <tr>
-                      <td> {{ $country->country }} </td>
+                      <td>  
+                        <span class="icon is-small">
+                          <img src="{{ $country->countryInfo->flag }}" width="16px"> 
+                        </span>
+                        <span>
+                          {{ $country->country }}
+                        </span>
+                      </td>
                       <td> {{ number_format($country->cases) }} </td>
                       <td class="has-text-danger"> {{ number_format($country->todayCases) }} </td>
                       <td> {{ number_format($country->deaths) }} </td>

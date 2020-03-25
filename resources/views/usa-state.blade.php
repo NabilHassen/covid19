@@ -116,17 +116,6 @@
                   {{ number_format($stateStats[0]->deaths) }}
                 </div>
               </div>
-              <div class="is-size-5">
-                <span class="icon is-medium">
-                  <i class="fas fa-heart"></i>
-                </span>
-                <span>
-                  Total Recovered
-                </span>
-                <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($stateStats[0]->recovered) }}
-                </div>
-              </div>
             </div>
           </div>
           <div class="column is-3">
@@ -166,17 +155,6 @@
                 </span>
                 <div class="has-text-weight-medium is-size-3 has-text-centered">
                   {{ number_format($stateStats[1]->deaths) }}
-                </div>
-              </div>
-              <div class="is-size-5">
-                <span class="icon is-medium">
-                  <i class="fas fa-heart"></i>
-                </span>
-                <span>
-                  Total Recovered
-                </span>
-                <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($stateStats[1]->recovered) }}
                 </div>
               </div>
             </div>
@@ -220,17 +198,6 @@
                   {{ number_format($stateStats[2]->deaths) }}
                 </div>
               </div>
-              <div class="is-size-5">
-                <span class="icon is-medium">
-                  <i class="fas fa-heart"></i>
-                </span>
-                <span>
-                  Total Recovered
-                </span>
-                <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($stateStats[2]->recovered) }}
-                </div>
-              </div>
             </div>
           </div>
           <div class="column is-3">
@@ -272,17 +239,6 @@
                   {{ number_format($stateStats[3]->deaths) }}
                 </div>
               </div>
-              <div class="is-size-5">
-                <span class="icon is-medium">
-                  <i class="fas fa-heart"></i>
-                </span>
-                <span>
-                  Total Recovered
-                </span>
-                <div class="has-text-weight-medium is-size-3 has-text-centered">
-                  {{ number_format($stateStats[3]->recovered) }}
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -308,7 +264,6 @@
                 <th class="has-text-danger">New Cases</th>
                 <th>Death</th>
                 <th class="has-text-danger">New Death</th>
-                <th class="has-text-link">Recovered</th>
                 <th class="has-text-danger">Active</th>
               </thead>
               <tbody>
@@ -319,7 +274,6 @@
                       <td class="has-text-danger"> {{ number_format($state->todayCases) }} </td>
                       <td> {{ number_format($state->deaths) }} </td>
                       <td class="has-text-danger"> {{ number_format($state->todayDeaths) }} </td>
-                      <td class="has-text-link"> {{ number_format($state->recovered) }} </td>
                       <td class="has-text-danger"> {{ number_format($state->active) }} </td>
                     </tr>
                 @endforeach
