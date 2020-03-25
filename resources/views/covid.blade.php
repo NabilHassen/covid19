@@ -53,19 +53,19 @@
                     <div class="column is-3 has-text-white">
                       Active Cases
                       <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($activeCases) }}%
+                        {{ number_format($activeCases, 1) }}%
                       </div>
                     </div>
                     <div class="column is-3 has-text-white">
                       Death Cases
                       <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($deathRate) }}%
+                        {{ number_format($deathRate, 1) }}%
                       </div>
                     </div>
                     <div class="column is-3 has-text-white">
                       Recovered Cases
                       <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($recoveryRate) }}%
+                        {{ number_format($recoveryRate, 1) }}%
                       </div>
                     </div>
                   </div>
