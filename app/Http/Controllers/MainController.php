@@ -44,7 +44,7 @@ class MainController extends Controller
 
     public function statsByCountry()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries");
+        $response = Http::get("https://corona.lmao.ninja/countries?sort=cases");
 
         return json_decode($response);
     }
