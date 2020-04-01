@@ -28,13 +28,43 @@
                   </div>
                   <div class="column is-3 has-text-white">
                     <span class="icon is-medium">
-                      <i class="fas fa-skull-crossbones"></i>
+                      <i class="fas fa-globe"></i>
                     </span>
                     <span>
-                      Total Death
+                      Affected Regions
                     </span>
                     <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($overallStats->deaths) }}
+                      {{ number_format($overallStats->affectedCountries) }}
+                    </div>
+                  </div>
+                </div>
+                  <div class="columns is-marginless">
+                    <div class="column is-3 has-text-white">
+                      <span class="icon is-medium">
+                        <i class="fas fa-bed"></i>
+                      </span>
+                      <span>
+                        Active Cases
+                      </span>
+                      <div class="has-text-weight-bold is-size-3">
+                        {{ number_format($overallStats->active) }}
+                        <span class="is-size-7 has-text-weight-normal">
+                          ({{ number_format($activeCases, 1) }}%)
+                        </span>
+                      </div>
+                    </div>
+                    <div class="column is-3 has-text-white">
+                      <span class="icon is-medium">
+                        <i class="fas fa-skull-crossbones"></i>
+                      </span>
+                      <span>
+                        Total Death
+                      </span>
+                      <div class="has-text-weight-bold is-size-3">
+                          {{ number_format($overallStats->deaths) }}
+                          <span class="is-size-7 has-text-weight-normal">
+                            ({{ number_format($deathRate, 1) }}%)
+                          </span>
                       </div>
                     </div>
                     <div class="column is-3 has-text-white">
@@ -46,30 +76,13 @@
                       </span>
                       <div class="has-text-weight-bold is-size-3">
                         {{ number_format($overallStats->recovered) }}
+                        <span class="is-size-7 has-text-weight-medium">
+                          ({{ number_format($recoveryRate, 1) }}%)
+                        </span>
                       </div>
                     </div>
                   </div>
-                  <div class="columns is-marginless">
-                    <div class="column is-3 has-text-white">
-                      Active Cases
-                      <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($activeCases, 1) }}%
-                      </div>
-                    </div>
-                    <div class="column is-3 has-text-white">
-                      Death Cases
-                      <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($deathRate, 1) }}%
-                      </div>
-                    </div>
-                    <div class="column is-3 has-text-white">
-                      Recovered Cases
-                      <div class="has-text-weight-bold is-size-3">
-                        {{ number_format($recoveryRate, 1) }}%
-                      </div>
-                    </div>
-                  </div>
-              </div>
+              </div>  
           </div>
       </section>
 
