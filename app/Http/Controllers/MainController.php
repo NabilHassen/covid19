@@ -65,7 +65,7 @@ class MainController extends Controller
 
     public function ksaStat()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries/saudi");
+        $response = Http::get("https://corona.lmao.ninja/countries/sau");
 
         return json_decode($response);
     }
