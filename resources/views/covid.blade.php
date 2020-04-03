@@ -88,6 +88,44 @@
 
       <br>
 
+      <div class="container">
+        <div class="columns is-marginless">
+          <div class="column" style="overflow:auto;">
+            <table class="table is-fullwidth is-bordered is-hoverable has-background-white-bis">
+              <thead class="has-background-grey-lighter">
+                <th>Your Country</th>
+                <th>Cases</th>
+                <th class="has-text-danger">New Cases</th>
+                <th>Death</th>
+                <th class="has-text-danger">New Death</th>
+                <th class="has-text-link">Recovered</th>
+                <th class="has-text-danger">Critical</th>
+              </thead>
+              <tbody>
+                <tr class="has-background-white-ter">
+                  <td>  
+                    <span class="icon is-small">
+                      <img src="{{ $myCountryStat->countryInfo->flag }}" width="16px"> 
+                    </span>
+                    <span>
+                      {{ $myCountryStat->country }}
+                    </span>
+                  </td>
+                  <td> {{ number_format($myCountryStat->cases) }} </td>
+                  <td class="has-text-danger"> {{ number_format($myCountryStat->todayCases) }} </td>
+                  <td> {{ number_format($myCountryStat->deaths) }} </td>
+                  <td class="has-text-danger"> {{ number_format($myCountryStat->todayDeaths) }} </td>
+                  <td class="has-text-link"> {{ number_format($myCountryStat->recovered) }} </td>
+                  <td class="has-text-danger"> {{ number_format($myCountryStat->critical) }} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
       <section class="container">
         <div class="columns is-marginless">
           <div class="column is-3">

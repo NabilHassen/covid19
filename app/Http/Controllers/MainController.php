@@ -16,13 +16,13 @@ class MainController extends Controller
     {
         $overallStats = $this->overallStats();
 
-        $recoveryRate = ($overallStats->recovered/$overallStats->cases)*100;
+        $recoveryRate = ($overallStats->recovered / $overallStats->cases) * 100;
 
-        $deathRate = ($overallStats->deaths/$overallStats->cases)*100;
+        $deathRate = ($overallStats->deaths / $overallStats->cases) * 100;
 
         $countryStats = $this->statsByCountry();
 
-        $activeCases = (($overallStats->cases - $overallStats->deaths - $overallStats->recovered)/$overallStats->cases)*100;
+        $activeCases = (($overallStats->cases - $overallStats->deaths - $overallStats->recovered) / $overallStats->cases) * 100;
 
         $ethStat = $this->ethStat();
 
@@ -32,7 +32,9 @@ class MainController extends Controller
 
         $ksaStat = $this->ksaStat();
 
-        return view('covid', compact('overallStats', 'recoveryRate', 'deathRate', 'activeCases', 'countryStats', 'ethStat', 'itlStat', 'gerStat', 'ksaStat'));
+        $myCountryStat = $this->getMyCountryStat();
+
+        return view('covid', compact('overallStats', 'recoveryRate', 'deathRate', 'activeCases', 'countryStats', 'ethStat', 'itlStat', 'gerStat', 'ksaStat', 'myCountryStat'));
     }
 
     public function overallStats()
@@ -83,13 +85,24 @@ class MainController extends Controller
 
         $usaStats = json_decode(Http::get('https://corona.lmao.ninja/countries/usa'));
 
-        $recoveryRate = ($usaStats->recovered/$usaStats->cases)*100;
+        $recoveryRate = ($usaStats->recovered / $usaStats->cases) * 100;
 
-        $deathRate = ($usaStats->deaths/$usaStats->cases)*100;
+        $deathRate = ($usaStats->deaths / $usaStats->cases) * 100;
 
-        $activeCases = (($usaStats->cases - $usaStats->deaths - $usaStats->recovered)/$usaStats->cases)*100;
+        $activeCases = (($usaStats->cases - $usaStats->deaths - $usaStats->recovered) / $usaStats->cases) * 100;
 
         return view('usa-state', compact('stateStats', 'usaStats', 'recoveryRate', 'deathRate', 'activeCases'));
+    }
+
+    public function getMyCountryStat()
+    {
+        // $country = json_decode(Http::get("https://api.ip2country.info/ip?" . $_SERVER['REMOTE_ADDR'] ));
+
+        $country = json_decode(Http::get("https://api.ip2country.info/ip?196.188.240.205"));
+
+        $response = Http::get("https://corona.lmao.ninja/countries/" . $country->countryCode);
+
+        return json_decode($response);
     }
 
     public function showAbout()
