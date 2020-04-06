@@ -93,6 +93,7 @@
           <div class="column" style="overflow:auto;">
             <table class="table is-fullwidth is-bordered is-hoverable has-background-white-bis">
               <thead class="has-background-grey-lighter">
+                <a name="my-country">&nbsp;</a>
                 <th>Your Country</th>
                 <th>Cases</th>
                 <th class="has-text-danger">New Cases</th>
@@ -100,6 +101,7 @@
                 <th class="has-text-danger">New Death</th>
                 <th class="has-text-link">Recovered</th>
                 <th class="has-text-danger">Critical</th>
+                <th>Tests</th>
               </thead>
               <tbody>
                 <tr class="has-background-white-ter">
@@ -112,11 +114,40 @@
                     </span>
                   </td>
                   <td> {{ number_format($myCountryStat->cases) }} </td>
-                  <td class="has-text-danger"> {{ number_format($myCountryStat->todayCases) }} </td>
+
+                  <td class="has-text-danger"> 
+                    @if ($myCountryStat->todayCases === $myCountryStat->cases)
+                      {{ number_format($myCountryStat->todayCases) }} 
+                    @else
+                      {{ number_format($myCountryStat->todayCases) }} 
+                      <span class="is-size-7 has-text-success">
+                          (+{{ number_format(($myCountryStat->todayCases / ($myCountryStat->cases - $myCountryStat->todayCases))*100, 2) }}%)
+                      </span>
+                    @endif
+                  </td>
+
                   <td> {{ number_format($myCountryStat->deaths) }} </td>
-                  <td class="has-text-danger"> {{ number_format($myCountryStat->todayDeaths) }} </td>
+
+                  <td class="has-text-danger"> 
+                    @if ($myCountryStat->deaths === $myCountryStat->todayDeaths)
+                      {{ number_format($myCountryStat->todayDeaths) }} 
+                    @else
+                      {{ number_format($myCountryStat->todayDeaths) }} 
+                      <span class="is-size-7 has-text-success">
+                          (+{{ number_format(($myCountryStat->todayDeaths / ($myCountryStat->deaths - $myCountryStat->todayDeaths))*100, 2) }}%)
+                      </span>
+                    @endif
+                  </td>
+
                   <td class="has-text-link"> {{ number_format($myCountryStat->recovered) }} </td>
                   <td class="has-text-danger"> {{ number_format($myCountryStat->critical) }} </td>
+                  <td> 
+                    @if ($myCountryStat->tests === 0)
+                        {{ "" }}
+                    @else
+                        {{ number_format($myCountryStat->tests) }} 
+                    @endif 
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -361,6 +392,7 @@
                 <th class="has-text-danger">New Death</th>
                 <th class="has-text-link">Recovered</th>
                 <th class="has-text-danger">Critical</th>
+                <th>Tests</th>
               </thead>
               <tbody>
                 @foreach ($countryStats as $country)
@@ -374,11 +406,40 @@
                         </span>
                       </td>
                       <td> {{ number_format($country->cases) }} </td>
-                      <td class="has-text-danger"> {{ number_format($country->todayCases) }} </td>
+
+                      <td class="has-text-danger"> 
+                        @if ($country->todayCases === $country->cases)
+                          {{ number_format($country->todayCases) }} 
+                        @else
+                          {{ number_format($country->todayCases) }} 
+                          <span class="is-size-7 has-text-success">
+                              (+{{ number_format(($country->todayCases / ($country->cases - $country->todayCases))*100, 2) }}%)
+                          </span>
+                        @endif
+                      </td>
+
                       <td> {{ number_format($country->deaths) }} </td>
-                      <td class="has-text-danger"> {{ number_format($country->todayDeaths) }} </td>
+
+                      <td class="has-text-danger"> 
+                        @if ($country->deaths === $country->todayDeaths)
+                          {{ number_format($country->todayDeaths) }} 
+                        @else
+                          {{ number_format($country->todayDeaths) }} 
+                          <span class="is-size-7 has-text-success">
+                              (+{{ number_format(($country->todayDeaths / ($country->deaths - $country->todayDeaths))*100, 2) }}%)
+                          </span>
+                        @endif
+                      </td>
+
                       <td class="has-text-link"> {{ number_format($country->recovered) }} </td>
                       <td class="has-text-danger"> {{ number_format($country->critical) }} </td>
+                      <td>
+                        @if ($country->tests === 0)
+                            {{ "" }}
+                        @else
+                            {{ number_format($country->tests) }} 
+                        @endif 
+                      </td>
                     </tr>
                 @endforeach
               </tbody>
