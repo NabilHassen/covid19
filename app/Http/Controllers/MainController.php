@@ -39,51 +39,51 @@ class MainController extends Controller
 
     public function overallStats()
     {
-        $response = Http::get("https://corona.lmao.ninja/all");
+        $response = Http::get("https://corona.lmao.ninja/v2/all");
 
         return json_decode($response);
     }
 
     public function statsByCountry()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries?sort=cases");
+        $response = Http::get("https://corona.lmao.ninja/v2/countries?sort=cases");
 
         return json_decode($response);
     }
 
     public function ethStat()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries/ethiopia");
+        $response = Http::get("https://corona.lmao.ninja/v2/countries/ethiopia");
 
         return json_decode($response);
     }
 
     public function itlStat()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries/italy");
+        $response = Http::get("https://corona.lmao.ninja/v2/countries/italy");
 
         return json_decode($response);
     }
 
     public function ksaStat()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries/sau");
+        $response = Http::get("https://corona.lmao.ninja/v2/countries/sau");
 
         return json_decode($response);
     }
 
     public function gerStat()
     {
-        $response = Http::get("https://corona.lmao.ninja/countries/germany");
+        $response = Http::get("https://corona.lmao.ninja/v2/countries/germany");
 
         return json_decode($response);
     }
 
     public function getUsaStateStats()
     {
-        $stateStats = json_decode(Http::get("https://corona.lmao.ninja/states"));
+        $stateStats = json_decode(Http::get("https://corona.lmao.ninja/v2/states"));
 
-        $usaStats = json_decode(Http::get('https://corona.lmao.ninja/countries/usa'));
+        $usaStats = json_decode(Http::get('https://corona.lmao.ninja/v2/countries/usa'));
 
         $recoveryRate = ($usaStats->recovered / $usaStats->cases) * 100;
 
@@ -100,7 +100,7 @@ class MainController extends Controller
 
         $country = json_decode(Http::get("https://api.ip2country.info/ip?196.188.240.205"));
 
-        $response = Http::get("https://corona.lmao.ninja/countries/" . $country->countryCode);
+        $response = Http::get("https://corona.lmao.ninja/v2/countries/" . $country->countryCode);
 
         return json_decode($response);
     }
