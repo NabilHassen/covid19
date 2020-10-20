@@ -81,7 +81,7 @@
           <span class="has-text-grey-lighter is-italic">
             Powered by
           </span>
-          <a href="https://onrica.com" target="_blank">
+          <a href="https://onricatech.com" target="_blank">
             <br>
             <img src="/img/sponsor.png" width="150px" height="70px">
           </a>
@@ -91,13 +91,13 @@
 <script src="/js/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-{{-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161177413-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161177413-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-161177413-1');
-</script> --}}
+</script>
 </body>
 </html>

@@ -376,7 +376,7 @@
             Powered by 
           </span>
           <br>
-          <a href="https://onrica.com" target="_blank">
+          <a href="https://onricatech.com" target="_blank">
             <img src="/img/wide_logo.png" width="130px" height="70px">
           </a>
         </div>
